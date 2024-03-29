@@ -1,0 +1,11 @@
+.hidden {
+    display: none;
+}
+
+.fileContent {
+    background-color: royalblue;
+    width: 300px;
+    border: 15px solid blueviolet;
+    padding: 50px;
+    margin: 20px;
+}

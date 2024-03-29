@@ -1,0 +1,11 @@
+.download-link {
+    display: block;
+    margin-top: 10px;
+    color: blue;
+    text-decoration: none; 
+    font-weight: bold;
+}
+
+.download-link:hover {
+    color: darkblue;
+}

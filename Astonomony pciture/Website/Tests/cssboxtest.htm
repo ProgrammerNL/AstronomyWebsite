@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Read Specific Local Text File</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+<h1>Read Specific Local Text File</h1>
+
+<!-- Button to trigger file reading -->
+<button type="button" onclick="readFile()">Read File</button>
+
+<!-- Container for file content -->
+<div id="fileContent" class="hidden"></div>
+
+<script>
+    function readFile() {
+        // Path to the specific local text file
+        var filePath = 'image.txt'; // Update with your file path
+        
+        // Fetch the file using XMLHttpRequest
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', filePath, true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                // File read successfully
+                var fileContent = xhr.responseText;
+                // Display file content in the container
+                var fileContentDiv = document.getElementById('fileContent');
+                fileContentDiv.textContent = fileContent;
+                fileContentDiv.classList.remove('hidden'); // Show the box
+            }
+        };
+        xhr.send();
+    }    
+</script>
+
+</body>
+</html>
